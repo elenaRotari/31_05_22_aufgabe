@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 5% 80% 15%;
+}
+header {
+  height: 100%;
+}
+
+header :first-child {
+  background-color: grey;
+}
+header :last-child {
+  background-color: green;
+}
+
+main {
+  background-color: goldenrod;
+}
+.firstContainer {
+  display: grid;
+  grid-template-columns: 25% 1fr 25%;
+  height: 45%;
+  grid-template-areas:
+    "left  middle right"
+    "left  middle right";
+}
+.firstContainer :first-child {
+  grid-area: left;
+  background-color: bisque;
+}
+.firstContainer :nth-child(2) {
+  grid-area: middle;
+  background-color: brown;
+}
+.firstContainer :last-child {
+  grid-area: right;
+  background-color: azure;
+}
+
+.businessContainer, footer {
+  display: grid;
+ 
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+   gap: 1rem;
+  padding: .5rem;
+  height: 30%;
+  background-color: blueviolet;
+ 
+}
+
+.politicsContainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    height: 30%;
+   
+}
+.politicsContainer div{
+    background-color: cadetblue;
+    gap: 1rem;
+}
+
+
+}
+footer {
+ 
+
+}

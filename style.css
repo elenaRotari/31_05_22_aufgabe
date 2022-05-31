@@ -3,74 +3,120 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-body {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: 5% 80% 15%;
+a {
+  text-decoration: none;
 }
 header {
-  height: 100%;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+}
+.navContainer1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "iconsLeft times iconsRight";
+}
+.iconsLeft {
+  grid-area: iconsLeft;
+}
+.times {
+  grid-area: times;
+}
+.times p {
+  font-size: 0.5rem;
+}
+.iconsRight {
+  grid-area: iconsRight;
+  display: flex;
+  justify-content: flex-end;
+}
+.navContainer2 {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-areas: ". . home about business interview politics travel contact . .";
 }
 
-header :first-child {
-  background-color: grey;
+.home {
+  grid-area: home;
 }
-header :last-child {
-  background-color: green;
+.about {
+  grid-area: about;
 }
-
+.business {
+  grid-area: business;
+}
+.interview {
+  grid-area: interview;
+}
+.politics {
+  grid-area: politics;
+}
+.travel {
+  grid-area: travel;
+}
+.contact {
+  grid-area: contact;
+}
 main {
-  background-color: goldenrod;
+  /* background-color: goldenrod; */
+  padding-top: 100px;
 }
 .firstContainer {
   display: grid;
-  grid-template-columns: 25% 1fr 25%;
-  height: 45%;
+  grid-template-columns: repeat(5, 1fr);
+
   grid-template-areas:
-    "left  middle right"
-    "left  middle right";
+    "leftCard1  middleCard middleCard middleCard rightCard"
+    "leftCard2  middleCard middleCard  middleCard rightCard";
 }
-.firstContainer :first-child {
-  grid-area: left;
+.leftCard1 {
+  grid-area: leftCard1;
   background-color: bisque;
 }
-.firstContainer :nth-child(2) {
-  grid-area: middle;
+.leftCard2 {
+  grid-area: leftCard2;
   background-color: brown;
 }
-.firstContainer :last-child {
-  grid-area: right;
+.middleCard {
+  grid-area: middleCard;
+}
+.rightCard {
+  grid-area: rightCard;
   background-color: azure;
 }
 
-.businessContainer, footer {
-  display: grid;
- 
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-   gap: 1rem;
-  padding: .5rem;
-  height: 30%;
-  background-color: blueviolet;
- 
-}
-
-.politicsContainer{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-
-    height: 30%;
-   
-}
-.politicsContainer div{
-    background-color: cadetblue;
-    gap: 1rem;
-}
-
-
-}
+.businessContainer,
 footer {
- 
+  display: grid;
 
+  grid-template-columns: repeat(5, 1fr);
+  background-color: blueviolet;
+}
+
+.politicsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "big big small1"
+    "big big small2"
+    "big big small3"
+    "big big small4"
+    "big big ."
+    "big big .";
+}
+.politicsContainer div {
+  background-color: cadetblue;
+  gap: 1rem;
+}
+
+.flexColummn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.centerDirection {
+  justify-content: center;
+  align-items: center;
 }
